@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hello!</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/98.css@0.1.4/build/98.css" />
+    <link rel="stylesheet" href="crt.css" <script src="corrupt.js">
+    </script>
+
+</head>
+
+
+
+<body>
+
+    <img id="toots" src="game/assets/img/toots.png" style="
+  position: fixed;
+  left: 75%;
+  top: 10%;
+  width: 90px;
+  height: 140px;
+  cursor: pointer;
+  z-index: 99997;
+  display: none;
+  pointer-events: none;
+" onclick="tootsClicked()">
+
+    <div id="toots-dialogue" style="
+  display: none;
+  position: fixed;
+  left: 1050px;
+  top: 210px;
+  width: 300px;
+  background: rgba(0,0,0,0.8);
+  color: white;
+  padding: 20px;
+  font-family: Georgia;
+  z-index: 99999;
+  cursor: pointer;
+" onclick="tootsAdvance()">
+        <p id="toots-name" style="font-weight: bold; margin-bottom: 8px;"></p>
+        <p id="toots-text"></p>
+    </div>
+
+    <article id="block">
+
+        <div style="padding: 50px;">
+            <center>
+                <img src="assets/welcomerotating.gif"
+                    style="width: 400px; height: auto; position: fixed; left: 35%; top: -50px">
+            </center>
+        </div>
+
+        <div class="window-container">
+            <div class="window" style="width: 500px">
+                <div class="title-bar">
+                    <div class="title-bar-text">
+                        README.txt
+                    </div>
+
+                    <div class="title-bar-controls">
+                        <button aria-label="Minimize"></button>
+                        <button aria-label="Maximize"></button>
+                        <button aria-label="Close"></button>
+                    </div>
+                </div>
+                <div class="window-body">
+                    <ul class="nav-list">
+                        <li><a href="#">about</a></li>
+                        <li><a href="#">works</a></li>
+                        <li><a href="#">journal</a></li>
+                        <li><a href="#" onclick="openTerminal(); return false;">open terminal</a></li>
+                        <li><a href="#" onclick="openGame(); return false;">
+                                <div class="animated-rainbow">O-NE</div>
+                            </a></li>
+
+                        <img src="/assets/transrights.png" alt="trans rights now!">
+                        <img src="/assets/palestine.gif " alt="free palestine button"
+                            style="width: 88px; height: auto;">
+                        <img src="/assets/ssss.png " alt="free palestine button" style="width: 88px; height: auto;">
+                        <img src="/assets/eatingchaps.gif" alt="free palestine button"
+                            style="width: 88px; height: auto;">
+
+
+                    </ul>
+
+                    <section class="field-row" style="justify-content: flex-end">
+
+                    </section>
+                </div>
+            </div>
+
+            <div class="window" style=" width: 500px">
+                <div class="title-bar">
+                    <div class="title-bar-text">
+                        jules.exe
+                    </div>
+
+                    <div class="title-bar-controls">
+                        <button aria-label="Minimize"></button>
+                        <button aria-label="Maximize"></button>
+                        <button aria-label="Close"></button>
+                    </div>
+                </div>
+                <div class="window-body">
+                    <img src="https://pixelsafari.neocities.org/dividers/more/hangingstars.gif"
+                        style="width: 100%; padding-bottom: 0px;">
+                    <img src="assets/nekojiru.png">
+                    <h2 id="intro-title">Haii, I'm Jules</h2>
+                    <h3 id="intro-subtitle">(they/them) — aka "mewo" online</h3>
+
+                    <p id="intro-text">
+                        welcome to my blog site!
+
+                    </p>
+
+                    <h4 id="about-heading">about me</h4>
+                    <p id="about-text">
+                        i really like building websites, weird psychedelic games that don't make much sense, and fucking
+                        around with tech.
+                        I would love ot get into drawing, but i'm not great at using physical media
+                    </p>
+
+                    <h4 id="site-heading">O-NE</h4>
+                    <p id="site-text">
+                        I am currently working on a program called Project O-NE. This software allows you to create a
+                        digital
+                        link between our world and a strange universe that seems to exist parallel to ours.
+                    </p>
+
+                    <h3 id="content-heading" style="color: red;">WARNING</h3>
+                    <p id="content-text" style="color: red;">
+                        Please, be careful with ON-E. This project is currently in early access and may have unexpected
+                        results. If you have somehow found this website, I advise you not to access the program unless
+                        you know what you're
+                    </p>
+
+
+                    <section>
+                        <footer style="bottom: 0;">
+                        </footer>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <img src="assets/2760716_1f94a-3059407344.png"
+            style="max-width: 26vh; height: auto; position: fixed; top: 74%; left: 55%;">
+
+        <div class="window floating-window" id="game-window"
+            style="width: 820px; top: 10%; left: 20%; position: fixed; display: none;">
+            <div class="title-bar floating-handle">
+                <div class="title-bar-text">O-NE.exe</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Minimize"></button>
+                    <button aria-label="Maximize"></button>
+                    <button aria-label="Close" onclick="closeGame(); return false;"></button>
+
+                </div>
+            </div>
+            <div class="window-body" style="padding: 0; margin: 0;">
+                <iframe id="game-frame" src="" width="800" height="600" style="display: block; border: none;"></iframe>
+            </div>
+        </div>
+        <audio id="error-sound" src="error_sound.mp3" preload="auto"></audio>
+</body>
+
+
+<footer class="win98-footer window">
+    © 2002 Jules
+    <p id="win98_clock"></p>
+</footer>
+
+
+
+<script>
+
+    let ending = Number(localStorage.getItem("ending")) || 0;
+
+    let topZ = 9999;
+
+    //flags
+    let speed_mult = 1.11;
+    let corruptionFixed = false;
+    let corruptionStep = 0;
+    let corruptionTimer = null;
+    let popupTimer = null;
+
+    function openGame() {
+        let win = document.getElementById("game-window");
+        let frame = document.getElementById("game-frame");
+        frame.src = "game/index.html";
+        win.style.display = "block";
+        topZ += 1;
+        win.style.zIndex = topZ;
+    }
+
+
+/* REPLACE your closeGame() with this */
+
+function closeGame() {
+    let win = document.getElementById("game-window");
+    let frame = document.getElementById("game-frame");
+
+    win.style.display = "none";
+    frame.src = "";
+
+    /* bad ending state: clown is gone forever */
+    if (ending === 1) {
+        return;
+    }
+    spawnClown();
+}
+
+    window.addEventListener("DOMContentLoaded", () => {
+
+        /* ADD inside your DOMContentLoaded callback, right after console.log(ending); */
+
+if (ending === 2) {
+    const oneLink = document.querySelector('[onclick*="openGame()"]');
+
+    if (oneLink) {
+        oneLink.onclick = function (e) {
+            e.preventDefault();
+
+            /* play chime */
+            const chime = new Audio("chime_sound.mp3");
+            chime.play().catch(() => {});
+
+            /* popup error */
+            spawnErrorWindow(
+                window.innerWidth / 2 - 130,
+                window.innerHeight / 2 - 90,
+                "haven't you endangered this world enough?"
+            );
+
+            return false;
+        };
+    }
+}
+
+        ending = Number(localStorage.getItem("ending")) || 0;
+
+        console.log(ending);
+
+        const windows = document.querySelectorAll(".floating-window");
+
+        windows.forEach((win) => {
+            const handle = win.querySelector(".floating-handle");
+            if (!handle) return;
+
+            let isDragging = false;
+            let offsetX = 0;
+            let offsetY = 0;
+
+            function freezePosition() {
+                const rect = win.getBoundingClientRect();
+                win.style.left = rect.left + "px";
+                win.style.top = rect.top + "px";
+                win.style.transform = "none";
+                win.style.position = "fixed";
+            }
+
+            function bringToFront() {
+                topZ += 1;
+                win.style.zIndex = topZ;
+            }
+
+            handle.addEventListener("pointerdown", (e) => {
+                // don't drag when clicking title bar buttons
+                if (e.target.closest(".title-bar-controls")) return;
+
+                bringToFront();
+                freezePosition();
+                isDragging = true;
+                win.classList.add("dragging");
+
+                const rect = win.getBoundingClientRect();
+                offsetX = e.clientX - rect.left;
+                offsetY = e.clientY - rect.top;
+
+                handle.setPointerCapture(e.pointerId);
+                e.preventDefault();
+            });
+
+            handle.addEventListener("pointermove", (e) => {
+                if (!isDragging) return;
+                win.style.left = (e.clientX - offsetX) + "px";
+                win.style.top = (e.clientY - offsetY) + "px";
+            });
+
+            function stopDrag(e) {
+                isDragging = false;
+                win.classList.remove("dragging");
+                try { handle.releasePointerCapture(e.pointerId); } catch (_) { }
+            }
+
+            handle.addEventListener("pointerup", stopDrag);
+            handle.addEventListener("pointercancel", stopDrag);
+            win.addEventListener("pointerdown", bringToFront);
+        });
+
+    });
+
+
+</script>
+
+
+
+<!--toots dialogue-->
+<script>
+    /* REPLACE your dialogue array with this */
+    const TOOTS_DIALOGUE_1 = [
+        { name: "Toots", text: "Ah this is so horrible, I shouldn't be out here, it ain't my time yet!" },
+        { name: "Toots", text: "Y'know I was just doing my own thing and KABLAM, I found myself here. Can a little man ever catch a break?" },
+        { name: "Toots", text: "I don't really know where I am or what you did, but I don't think this is the place for a little respectable clown like me." },
+    ];
+
+    const TOOTS_DIALOGUE_2 = [
+        { name: "Toots", text: "Ah! Hey outsider, I am not quite sure what that was but it doesn't sound great." },
+        { name: "Toots", text: "I don't really feel like being here anyways, yaknow?" },
+        { name: "Toots", text: "We are warned tempering with the karmic cycle ain't good for us. The fabric that holds our world together isn't very stable." },
+        { name: "Toots", text: "You should know this too." },
+        { name: "Toots", text: "Look I don't want to stick around and see what happens. There has to be something you can do." },
+        { name: "Toots", text: "You ain't the first outsider, I heard of this kinda junk happening before" },
+        { name: "Toots", text: "Honk honk, you should probably check around for a note or something, honk honk!" }
+    ];
+
+    const TOOTS_DIALOGUE_3 = [
+        { name: "Toots", text: "Aw man, I don't know anything, don't look at me, I do juggling and lil jokes." },
+        { name: "Toots", text: "If I had to guess it has to do with the terminal" },
+        { name: "Toots", text: "Some computer tech-nerdy jargon..." },
+        { name: "Toots", text: "But who remembers that kinda junk? I don't know man, they must have wrote it down somewhere!" }
+    ];
+
+    let tootsStage = 1;
+    let tootsIndex = 0;
+    let tootsActive = false;
+    let tootsTyping = false;
+    let tootsCharIndex = 0;
+    let tootsInterval = null;
+
+    function playErrorSound() {
+        const sound = document.getElementById("error-sound");
+        if (!sound) return;
+
+        sound.currentTime = 0;
+        sound.play().catch(() => { });
+    }
+
+    function startCorruption() {
+        if (corruptionTimer || corruptionFixed) return;
+
+        corruptionStep = 0;
+
+        startPopupEscalation();
+
+        corruptionTimer = setInterval(() => {
+            if (corruptionFixed) return;
+
+            corruptionStep++;
+
+            if (corruptionStep === 1) corruptBioText();
+            else if (corruptionStep === 2) removeImages();
+            else if (corruptionStep === 3) removeBackground();
+            else if (corruptionStep === 4) removeAllCSS();
+            else if (corruptionStep === 5) fake404();
+
+        }, 16000);
+    }
+    function tootsClicked() {
+        if (tootsActive) return;
+
+        tootsIndex = 0;
+        tootsActive = true;
+        showTootsLine();
+    }
+
+
+    function getCurrentDialogue() {
+        if (tootsStage === 1) return TOOTS_DIALOGUE_1;
+        if (tootsStage === 2) return TOOTS_DIALOGUE_2;
+        return TOOTS_DIALOGUE_3;
+    }
+
+    /* REPLACE your spawnClown() with this */
+
+function spawnClown() {
+    let clown = document.getElementById("toots");
+    const footer = document.querySelector(".win98-footer");
+    const dialogue = document.getElementById("toots-dialogue");
+
+    if (!clown || !footer || !dialogue) return;
+
+    clown.style.display = "block";
+    clown.style.pointerEvents = "auto";
+    clown.style.position = "fixed";
+    clown.style.zIndex = "999997";
+
+    let dir = Math.random() < 0.5 ? 1 : -1;
+    let speed = 0.45;
+
+    const rect = footer.getBoundingClientRect();
+    let x = rect.left + 120 + Math.random() * (rect.width - 240);
+
+    /* first error at spawn point */
+    spawnErrorWindow(x, rect.top - 120);
+
+    /* stop old movement */
+    if (clown.walkTimer) clearInterval(clown.walkTimer);
+
+    let sway = 1;
+    let swayTick = 0;
+
+    function moveClown() {
+        const rect = footer.getBoundingClientRect();
+
+        const minX = rect.left + 8;
+        const maxX = rect.right - 70;
+        const y = rect.top - 118;
+
+        x += speed * dir;
+
+        if (x <= minX) dir = 1;
+        if (x >= maxX) dir = -1;
+
+        /* rocking motion */
+        swayTick++;
+        if (swayTick >= 18) {
+            sway *= -1;
+            swayTick = 0;
+        }
+
+        const tilt = sway * 10;
+
+        clown.style.left = x + "px";
+        clown.style.top = y + "px";
+        clown.style.transform = `scaleX(${dir}) rotate(${tilt}deg)`;
+
+        /* KEEP DIALOGUE ABOVE HIM */
+        dialogue.style.left = (x - 105) + "px";
+        dialogue.style.top = (y - 145) + "px";
+    }
+
+    clown.walkTimer = setInterval(moveClown, 16);
+}
+    function showTootsLine() {
+        let lines = getCurrentDialogue();
+
+        let box = document.getElementById("toots-dialogue");
+        let name = document.getElementById("toots-name");
+        let text = document.getElementById("toots-text");
+
+        box.style.display = "block";
+        name.textContent = lines[tootsIndex].name;
+        text.textContent = "";
+
+        tootsCharIndex = 0;
+        tootsTyping = true;
+
+        clearInterval(tootsInterval);
+
+        tootsInterval = setInterval(() => {
+            let full = lines[tootsIndex].text;
+
+            tootsCharIndex++;
+            text.textContent = full.substring(0, tootsCharIndex);
+
+            if (tootsCharIndex >= full.length) {
+                clearInterval(tootsInterval);
+                tootsTyping = false;
+            }
+        }, 30);
+    }
+
+    function tootsAdvance() {
+        const lines = getCurrentDialogue();
+
+        if (tootsTyping) {
+            clearInterval(tootsInterval);
+            tootsTyping = false;
+            document.getElementById("toots-text").textContent = lines[tootsIndex].text;
+            return;
+        }
+
+        tootsIndex++;
+
+        if (tootsIndex >= lines.length) {
+            document.getElementById("toots-dialogue").style.display = "none";
+            tootsActive = false;
+
+            if (tootsStage === 1) {
+                spawnErrorWindow();
+                tootsStage = 2;
+
+            } else if (tootsStage === 2) {
+                startCorruption();
+                tootsStage = 3;
+
+            } else if (tootsStage === 3) {
+                /* final dialogue just closes */
+            }
+
+            return;
+        }
+
+        showTootsLine();
+    }
+
+    function startPopupEscalation() {
+        let delay = 6000;
+
+        function spawnLoop() {
+            if (corruptionFixed) return;
+
+            spawnErrorWindow();
+
+            delay = delay / speed_mult;
+
+            /* keep it from becoming ridiculous */
+            if (delay < 900) delay = 900;
+
+            popupTimer = setTimeout(spawnLoop, delay);
+        }
+
+        popupTimer = setTimeout(spawnLoop, delay);
+    }
+
+
+    function spawnErrorWindow(
+        leftWindow = (80 + Math.random() * 1000),
+        topWindow = (60 + Math.random() * 550),
+        msg = "Fatal instability detected."
+    ) {
+        /* overlapping error sound */
+        const baseSound = document.getElementById("error-sound");
+
+        if (baseSound) {
+            const sfx = baseSound.cloneNode(true);
+            sfx.volume = baseSound.volume;
+            sfx.play().catch(() => { });
+
+            sfx.addEventListener("ended", () => {
+                sfx.remove();
+            });
+        }
+
+        let popup = document.createElement("div");
+
+        popup.className = "window";
+        popup.style.position = "fixed";
+        popup.style.width = "260px";
+        popup.style.left = leftWindow + "px";
+        popup.style.top = topWindow + "px";
+        popup.style.zIndex = "999999";
+
+        popup.innerHTML = `
+    <div class="title-bar">
+      <div class="title-bar-text">SYSTEM ERROR</div>
+      <div class="title-bar-controls">
+        <button aria-label="Close">x</button>
+      </div>
+    </div>
+
+    <div class="window-body">
+      <p>${msg}</p>
+      <section class="field-row" style="justify-content:flex-end">
+        <button>OK</button>
+      </section>
+    </div>
+    `;
+
+        popup.querySelectorAll("button").forEach(btn => {
+            btn.onclick = () => popup.remove();
+        });
+
+        document.body.appendChild(popup);
+    }
+
+
+    function openTerminal() {
+        let win = document.getElementById("terminal-window");
+        win.style.display = "block";
+        topZ += 1;
+        win.style.zIndex = topZ;
+        document.getElementById("terminal-input").focus();
+    }
+
+
+    document.addEventListener("DOMContentLoaded", () => {
+        document.getElementById("terminal-input").addEventListener("keydown", (e) => {
+            if (e.key !== "Enter") return;
+
+            let input = document.getElementById("terminal-input");
+            let output = document.getElementById("terminal-output");
+            let cmd = input.value.trim();
+
+            if (!cmd) return;
+
+            let userLine = document.createElement("div");
+            userLine.textContent = "$ " + cmd;
+            output.appendChild(userLine);
+
+            if (cmd.includes("return_id('toots')") || cmd.includes('return_id("toots")')) {
+                restoreTootsToGame();
+
+            } else {
+                let errorLine = document.createElement("div");
+                errorLine.style.color = "red";
+                errorLine.textContent = "ERROR: command not recognized — " + cmd;
+                output.appendChild(errorLine);
+            }
+
+            output.scrollTop = output.scrollHeight;
+            input.value = "";
+        });
+    });
+
+</script>
+
+<script>
+    // CORRUPTION GRAHHHHH!!
+    /* ---------- STEP 1 ---------- */
+    function corruptBioText() {
+        const ids = [
+            "intro-title",
+            "intro-subtitle",
+            "intro-text",
+            "about-heading",
+            "about-text",
+            "site-heading",
+            "site-text",
+            "content-heading",
+            "content-text"
+        ];
+
+        ids.forEach(id => {
+            let el = document.getElementById(id);
+            if (!el) return;
+
+            let original = el.textContent;
+            let broken = "";
+
+            for (let i = 0; i < original.length; i++) {
+                const chars = "!@#$%^&*()_+=-[]{}<>?/\\|~";
+                broken += original[i] === " "
+                    ? " "
+                    : chars[Math.floor(Math.random() * chars.length)];
+            }
+
+            el.textContent = broken;
+        });
+    }
+
+    /* ---------- STEP 2 ---------- */
+    function removeImages() {
+        const imgs = document.querySelectorAll("img");
+
+        imgs.forEach(img => {
+            if (img.id === "toots") return;
+            img.remove();
+        });
+    }
+
+    /* ---------- STEP 3 ---------- */
+    function removeBackground() {
+        document.body.style.background = "white";
+
+        const block = document.getElementById("block");
+        if (block) block.style.background = "none";
+    }
+
+    /* ---------- STEP 4 ---------- */
+    function removeAllCSS() {
+        document.querySelectorAll("link").forEach(link => {
+            link.remove();
+        });
+
+        document.querySelectorAll("style").forEach(style => {
+            style.remove();
+        });
+
+        document.querySelectorAll("*").forEach(el => {
+            if (el.id === "toots") return;
+            if (el.id === "terminal-window") return;
+            if (el.closest("#terminal-window")) return;
+            if (el.id === "toots-dialogue") return;
+
+            el.removeAttribute("class");
+            el.removeAttribute("style");
+        });
+    }
+
+    /* ---------- BETTER ERROR POPUPS ---------- */
+    function spawnErrorWindows() {
+        for (let i = 0; i < 4; i++) {
+            let popup = document.createElement("div");
+
+            popup.className = "window";
+            popup.style.position = "fixed";
+            popup.style.width = "260px";
+            popup.style.left = (80 + Math.random() * 1000) + "px";
+            popup.style.top = (60 + Math.random() * 550) + "px";
+            popup.style.zIndex = "99996";
+
+            popup.innerHTML = `
+      <div class="title-bar">
+        <div class="title-bar-text">SYSTEM ERROR</div>
+        <div class="title-bar-controls">
+          <button aria-label="Close">x</button>
+        </div>
+      </div>
+
+      <div class="window-body">
+        <p>Fatal instability detected.</p>
+        <section class="field-row" style="justify-content:flex-end">
+          <button>OK</button>
+        </section>
+      </div>
+    `;
+
+            popup.querySelectorAll("button").forEach(btn => {
+                btn.onclick = () => popup.remove();
+            });
+
+            document.body.appendChild(popup);
+        }
+    }
+
+    /* ---------- FINAL STATE ---------- */
+    function fake404() {
+        localStorage.setItem("ending", "1");
+        ending = 1;
+        clearInterval(corruptionTimer);
+        clearInterval(popupTimer);
+
+        document.body.innerHTML = `
+    <div style="
+      font-family: monospace;
+      padding: 40px;
+      background: white;
+      color: black;
+      min-height: 100vh;
+    ">
+      <h1>404 - PAGE CORRUPTED</h1> 
+      <p>Please reload the page.</p>
+      <button onclick="location.reload()">Reload</button>
+    </div>
+  `;
+    }
+
+    function restoreTootsToGame() {
+        localStorage.setItem("ending", "2");
+        ending = 2;
+        corruptionFixed = true;
+
+        clearInterval(corruptionTimer);
+        clearInterval(popupTimer);
+
+        document.querySelectorAll(".window").forEach(win => {
+            if (win.id === "terminal-window") return;
+            if (win.id === "game-window") return;
+            if (win.id === "toots-dialogue") return;
+            if (win.closest("#terminal-window")) return;
+        });
+
+        let clown = document.getElementById("toots");
+        if (clown) clown.remove();
+
+        let box = document.getElementById("toots-dialogue");
+        if (box) box.style.display = "none";
+
+        let output = document.getElementById("terminal-output");
+
+        let line = document.createElement("div");
+        line.style.color = "lime";
+        line.textContent = "successful! please reload the screen!";
+        output.appendChild(line);
+
+        output.scrollTop = output.scrollHeight;
+    }
+
+
+</script>
+
+<div class="window floating-window" id="terminal-window"
+    style="width: 400px; top: 30%; left: 30%; position: fixed; display: none;">
+    <div class="title-bar floating-handle">
+        <div class="title-bar-text">terminal.exe</div>
+        <div class="title-bar-controls">
+            <button aria-label="Minimize"></button>
+            <button aria-label="Maximize"></button>
+            <button aria-label="Close"
+                onclick="document.getElementById('terminal-window').style.display='none'"></button>
+        </div>
+    </div>
+    <div class="window-body"
+        style="background: black; padding: 8px; font-family: monospace; font-size: 12px; color: lime;">
+        <div id="terminal-output" style="height: 200px; overflow-y: auto; margin-bottom: 6px;">
+            <div>Welcome!</div>
+            <div>O-NE terminal 2.0</div>
+            <div>----------------------------</div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 4px;">
+            <span style="color: lime;">$</span>
+            <input id="terminal-input" type="text" style="
+        background: black;
+        border: none;
+        outline: none;
+        color: lime;
+        font-family: monospace;
+        font-size: 12px;
+        flex: 1;
+      " autofocus>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

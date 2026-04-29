@@ -1,0 +1,159 @@
+body {
+  font-family: 'MS PGothic', 'MS Gothic';
+  width: 100% ;
+  margin: 0 auto;
+  padding: 0;
+  background: url('/assets/cloud1anim.gif'); 
+  background-color: #008080;
+  background-attachment: fixed;
+  cursor:url("assets/nekojiru_mouse.gif"), auto;
+}
+
+* {
+  cursor:url("assets/nekojiru_mouse.gif"), auto;  
+}
+
+.block {
+    background-color: white;
+    padding: 10px;
+    margin-bottom: 10px;    
+}
+
+.box{
+  display:flex;
+  justify-content:center;
+}
+.item1{
+   flex:1;
+   display: flex;
+   justify-content: center;
+}
+
+.win98-footer {
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 2px solid #808080;
+}
+
+.window-container {
+  display: flex;
+  width: 50vw;
+  margin: 32px auto;
+  gap: 12px;
+  height: 75vh;
+}
+
+.window-container .window {
+  margin: 0 !important;
+  width: auto !important; 
+  /* Should really learn what this does, i think it just super imposes its attribute*/  
+}
+
+.window-container .window:first-child {
+  flex: 0 0 25%;
+}
+
+.window-container .window:last-child {
+  flex: 0 0 75%;
+}
+
+.nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-list li {
+  margin-bottom: 6px;
+}
+
+.nav-list a {
+  display: block;
+  padding: 4px 6px;
+  text-decoration: none;
+  color: black;
+  font-family: inherit;
+}
+
+.nav-list a:hover {
+  background: #000080;
+  color: white;
+}
+
+.floating-window {
+  position: fixed;      /* stays on screen */
+  top: 140px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 260px;
+  z-index: 9999;        /* on top */
+  cursor: default;
+}
+
+.floating-window .title-bar {
+  cursor: grab;
+  user-select: none;
+}
+
+.floating-window.dragging .title-bar {
+  cursor: grabbing;
+}
+
+#floatingHandle {
+  touch-action: none; /* important for pointer dragging */
+}
+
+.floating-handle {
+  touch-action: none;
+  cursor: grab;
+  user-select: none;
+}
+
+.floating-window.dragging .floating-handle {
+  cursor: grabbing;
+}
+
+.animated-rainbow {
+    background: linear-gradient(to left, #f00, #ff2b00, #f50, #ff8000, #fa0, #ffd500, #ff0, #d4ff00, #af0, #80ff00, #5f0, #2bff00, #0f0, #00ff2a, #0f5, #00ff80, #0fa, #00ffd5, #0ff, #00d5ff, #0af, #0080ff, #05f, #002aff, #00f, #2b00ff, #50f, #8000ff, #a0f, #d400ff, #f0f, #ff00d4, #f0a, #ff0080, #f05, #ff002b, #f00);
+    animation: rainbow-move-left-right 5s linear infinite alternate;
+    -webkit-background-clip: text;
+    background-clip: text;
+   -webkit-text-fill-color: transparent;
+}
+@keyframes rainbow-move-left-right {
+    0% {background-position: 0 0    }
+    100% {background-position: -500px 0}
+}
+
+#intro-title {
+    margin: 4px 0;
+    font-size: 16px;
+}
+
+#intro-subtitle {
+    margin: 2px 0;
+    font-size: 13px;
+    font-weight: normal;
+}
+
+#intro-text {
+    margin: 6px 0;
+}
+
+#about-heading,
+#site-heading,
+#content-heading {
+    margin: 6px 0 2px 0;
+    font-size: 13px;
+}
+
+#about-text,
+#site-text,
+#content-text {
+    margin: 4px 0;
+}
