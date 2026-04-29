@@ -1,3 +1,37 @@
+<!--
+================================================================================
+DEVELOPER NOTES / INTERNAL MAINTENANCE LOG / ARCHIVE ENTRY
+================================================================================
+
+If any escapped asset orphaned script construct, malformed sprite, wandering variable,
+or interactive personality somehow begins 
+walking freely across the website interface, 
+
+This behavior is usually caused by:
+- premature window termination
+- interrupted iframe closure
+- memory leakage
+
+
+Do not initiate a hard reset
+
+GENERAL RETURN PROCEDURE:
+
+1. Open terminal / console interface.
+2. Identify the escaped object's internal CHARACTER_ID.
+3. Use the standard relocation syntax shown below.
+5. Submit command.
+6. Wait for confirmation message.
+7. Reload interface if stability does not resume.
+
+WARNING: This may break the function of accessing O-NE on your login information altogether
+
+STANDARD RETURN COMMAND:
+
+return_id(CHARACTER_ID)
+-->
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -338,7 +372,7 @@ if (ending === 2) {
 
     const TOOTS_DIALOGUE_3 = [
         { name: "Toots", text: "Aw man, I don't know anything, don't look at me, I do juggling and lil jokes." },
-        { name: "Toots", text: "If I had to guess it has to do with the terminal" },
+        { name: "Toots", text: "If I had to guess it has to do with the terminal, try inspecting it" },
         { name: "Toots", text: "Some computer tech-nerdy jargon..." },
         { name: "Toots", text: "But who remembers that kinda junk? I don't know man, they must have wrote it down somewhere!" }
     ];
