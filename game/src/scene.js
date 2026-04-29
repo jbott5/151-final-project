@@ -181,7 +181,7 @@ function preloadScenes() {
                 {
                     id: "door",
                     x: 400, y: 320, w: 50, h: 80,
-                    debug: true,
+                    debug: false,
                     onClick() {
                         goToScene("eviltowerclose");
                     }
@@ -190,7 +190,7 @@ function preloadScenes() {
                 {
                     id: "door",
                     x: 0, y: 400, w: 800, h: 200,
-                    debug: true,
+                    debug: false,
                     onClick() {
                         goToScene("clown_world");
                     }
@@ -370,7 +370,7 @@ function preloadScenes() {
                 {
                     id: "weird_ball",
                     x: 500, y: 300, w: 200, h: 200,
-                    debug: true,
+                    debug: false,
                     onClick() {
                         startDialogue([
                             { name: "thomas", text: "oh no." },
@@ -393,7 +393,7 @@ function preloadScenes() {
                 {
                     id: "door",
                     x: 0, y: 450, w: 800, h: 800,
-                    debug: true,
+                    debug: false,
                     onClick() {
                         goToScene("techno_open");
                     }
@@ -402,7 +402,7 @@ function preloadScenes() {
                 {
                     id: "eye_creature",
                     x: 300, y: 280, w: 300, h: 150,
-                    debug: true,
+                    debug: false,
                     onClick() {
                         console.log("hello")
                         showChoice([
@@ -441,7 +441,7 @@ function preloadScenes() {
                 {
                     id: "back",
                     x: 0, y: 350, w: 800, h: 800,
-                    debug: true,
+                    debug: false,
                     onClick() {
                         goToScene("techno_center");
                     }
@@ -450,7 +450,7 @@ function preloadScenes() {
                 {
                     id: "dog",
                     x: 420, y: 240, w: 220, h: 60,
-                    debug: true,
+                    debug: false,
                     onClick() {
                         goToScene("techno_eye");
 
@@ -466,7 +466,7 @@ function preloadScenes() {
                 {
                     id: "door",
                     x: 0, y: 0, w: 300, h: 800,
-                    debug: true,
+                    debug: false,
                     onClick() {
                         goToScene("techno_open");
                     }
@@ -543,7 +543,7 @@ function preloadScenes() {
                 {
                     id: "door",
                     x: 0, y: 0, w: 800, h: 600,
-                    debug: true,
+                    debug: false,
                     onClick() {
                         console.log("clicked!");
                         startDialogue(NARRATOR_DIALOGUE, () => {
@@ -561,7 +561,7 @@ function preloadScenes() {
                 {
                     id: "flippy",
                     x: 300, y: 310, w: 140, h: 140,
-                    debug: true,
+                    debug: false,
                     onClick() {
                         console.log("clicked flippy!");
                         startDialogue(KEYBOARD_DIALOGUE, () => {
@@ -573,7 +573,7 @@ function preloadScenes() {
                 {
                     id: "door",
                     x: 0, y: 0, w: 150, h: 800,
-                    debug: true,
+                    debug: false,
                     onClick() {
                         console.log("clicked flippy!");
                         startDialogue(KEYBOARD_DIALOGUE, () => {
@@ -585,7 +585,7 @@ function preloadScenes() {
                 {
                     id: "door_two",
                     x: 650, y: 0, w: 200, h: 800,
-                    debug: true,
+                    debug: false,
                     onClick() {
                         console.log("clicked flippy!");
                         startDialogue(KEYBOARD_DIALOGUE, () => {
